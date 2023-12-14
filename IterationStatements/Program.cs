@@ -136,6 +136,27 @@ namespace IterationStatements
 
         }
 
+        public static bool CanVote()   
+        {
+            Console.WriteLine("Please enter your age:");
+            var canParse = int.TryParse(Console.ReadLine(), out int age);
+
+            while(canParse == false) 
+            {
+                Console.WriteLine("Please enter a valis age:");
+                canParse = int.TryParse(Console.ReadLine(),out age);
+            }
+
+            if(age >= 18) 
+            {
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
+        }
+
         //Write a method to display the multiplication table(from 1 to 12) of a given integer
 
         public static void Multiply()
